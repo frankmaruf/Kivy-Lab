@@ -1,0 +1,19 @@
+ExampleGrid:
+
+<ExampleGrid>:
+    cols: 3
+    ToggleButton:
+        text: "OFF"
+        on_press: root.toggle_btn(self)
+    Button:
+        text: "count"
+        on_press: root.clicked()
+        
+        font_name: "fonts/Limelight-Regular.ttf"
+        font_size: "40dp"
+        disabled: not root.count_enabled
+    Label:
+        text: root.my_text
+        font_name: "fonts/DS-DIGI.TTF"
+        font_size: "80dp"
+        color: 1,.5,1,0.6

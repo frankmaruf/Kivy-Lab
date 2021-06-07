@@ -1,0 +1,8 @@
+# Distribution / packaging
+env/
+
+# virtualenv
+.env
+env/
+ENV/
+.vscode
