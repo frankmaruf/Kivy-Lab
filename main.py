@@ -9,6 +9,8 @@ class ExampleGrid(GridLayout):
     count = 0
     count_enabled = BooleanProperty(False)
     my_text = StringProperty("0")
+    # slider value
+    # slide_value = StringProperty("0")
 
     def clicked(self):
         if self.count_enabled:
@@ -24,6 +26,13 @@ class ExampleGrid(GridLayout):
         else:
             widget.text = 'ON'
             self.count_enabled = True
+
+    def switch_clicked(self, widget):
+        print("Switch:" + str(widget.active))
+
+    # def on_slider_value(self, widget):
+    #     print("Slider:"+str(int(widget.value)))
+    #     self.slide_value = str(int(widget.value))
 
 
 class MainWidget(Widget):

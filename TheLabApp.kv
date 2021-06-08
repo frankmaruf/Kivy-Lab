@@ -5,10 +5,11 @@ ExampleGrid:
     ToggleButton:
         text: "OFF"
         on_press: root.toggle_btn(self)
+        size_hint: None, 1
+        width: "100dp"
     Button:
         text: "count"
         on_press: root.clicked()
-        
         font_name: "fonts/Limelight-Regular.ttf"
         font_size: "40dp"
         disabled: not root.count_enabled
@@ -17,3 +18,19 @@ ExampleGrid:
         font_name: "fonts/DS-DIGI.TTF"
         font_size: "80dp"
         color: 1,.5,1,0.6
+    Switch:
+        id: my_switch
+        size_hint: None, 1
+        width: "100dp"
+        # on_active: root.switch_clicked(self)
+        on_active: True
+    Slider:
+        id: my_slider
+        min: 0
+        max: 100
+        value: 30
+        orientation: 'vertical'
+        disabled: not my_switch.active
+        #on_value: root.on_slider_value(self)
+    Label:
+        text: str(int(my_slider.value))
