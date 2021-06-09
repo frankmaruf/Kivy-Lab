@@ -41,6 +41,8 @@ class ExampleGrid(GridLayout):
 class MainWidget(Widget):
     pass
 
+class CanvasExample(Widget):
+    pass
 
 class TheLabApp(App):
     pass
