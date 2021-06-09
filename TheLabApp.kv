@@ -1,4 +1,17 @@
-ExampleGrid:
+ImageExample:
+
+
+<ImageExample@GridLayout>:
+    cols: 3
+    Image:
+        source: "images\cake.jpg"
+    Image:
+        source: "images\cake.jpg"
+    Image:
+        source: "images\cake.jpg"
+        keep_ratio: False
+        allow_stretch: True
+
 
 <ExampleGrid>:
     cols: 3
@@ -32,5 +45,19 @@ ExampleGrid:
         orientation: 'vertical'
         disabled: not my_switch.active
         #on_value: root.on_slider_value(self)
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: str(int(my_slider.value))
+        ProgressBar:
+            max: 100
+            value: my_slider.value
+    TextInput:
+        id: my_text_input
+        size_hint: None, 1
+        width: "100dp"
+        text: ""
+        multiline: False
+        on_text_validate: root.on_text_validate(self)
     Label:
-        text: str(int(my_slider.value))
+        text: "Your name is:"+root.text_input_str

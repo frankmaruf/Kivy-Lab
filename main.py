@@ -9,6 +9,7 @@ class ExampleGrid(GridLayout):
     count = 0
     count_enabled = BooleanProperty(False)
     my_text = StringProperty("0")
+    text_input_str = StringProperty("Enter Your Name Plz!")
     # slider value
     # slide_value = StringProperty("0")
 
@@ -33,6 +34,8 @@ class ExampleGrid(GridLayout):
     # def on_slider_value(self, widget):
     #     print("Slider:"+str(int(widget.value)))
     #     self.slide_value = str(int(widget.value))
+    def on_text_validate(self, widget):
+        self.text_input_str = widget.text
 
 
 class MainWidget(Widget):
