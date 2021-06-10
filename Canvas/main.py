@@ -35,18 +35,28 @@ class CanvasExample(Widget):
         widget.disabled = True
 
     def on_button_plus_x(self, widget):
-        print("Clicked")
         x, y = self.rect.pos
-        x += dp(10)
-        y += dp(0)
+        w, h = self.rect.size
+        inc = dp(10)
+        diff = self.width - (x+w)
+        if diff < inc:
+            inc = diff
+        x += inc
         self.rect.pos = (x, y)
 
-    def on_button_minus(self, widget):
-        print("Clicked")
-        x, y = self.rect.pos
-        x += dp(-10)
-        y += dp(0)
-        self.rect.pos = (x, y)
+    # def on_button_plus_x(self, widget):
+    #     print("Clicked")
+    #     x, y = self.rect.pos
+    #     x += dp(10)
+    #     y += dp(0)
+    #     self.rect.pos = (x, y)
+
+    # def on_button_minus(self, widget):
+    #     print("Clicked")
+    #     x, y = self.rect.pos
+    #     x += dp(-10)
+    #     y += dp(0)
+    #     self.rect.pos = (x, y)
 
 
 class CanVApp(App):
